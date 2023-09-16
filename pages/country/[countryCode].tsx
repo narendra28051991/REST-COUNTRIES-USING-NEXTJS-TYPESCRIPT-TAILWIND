@@ -23,9 +23,9 @@ type CountryProps = {
       name: string;
     }[];
     borders: string[];
-  } | null; // Update the type to allow null
+  } | null;
 
-  notFound: boolean; // Add a notFound flag
+  notFound: boolean;
 };
 
 const Country: React.FC<CountryProps> = ({ country, notFound }) => {
@@ -43,7 +43,7 @@ const Country: React.FC<CountryProps> = ({ country, notFound }) => {
   }
 
   if (!country) {
-    return null; // Return null when data is not available
+    return null;
   }
 
   return (
@@ -73,7 +73,7 @@ export async function getStaticProps({ params: { countryCode } }: { params: { co
     return {
       props: {
         country: null,
-        notFound: true, // Set notFound flag to true
+        notFound: true,
       },
     };
   }
@@ -81,7 +81,7 @@ export async function getStaticProps({ params: { countryCode } }: { params: { co
   return {
     props: {
       country,
-      notFound: false, // Set notFound flag to false
+      notFound: false,
     },
   };
 }

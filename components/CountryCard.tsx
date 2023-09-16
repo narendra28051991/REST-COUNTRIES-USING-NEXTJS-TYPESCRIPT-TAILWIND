@@ -20,7 +20,7 @@ const CountryCard: React.FC<CountryCardProps> = ({ country }) => {
 
   return (
     <div className={`rounded-sm shadow-md ${bgColor} ${textColor}`}>
-      <Link legacyBehavior href={`/country/${country.alpha3Code}`}>
+      <Link href="/country/[countryCode]" as={`/country/${country.alpha3Code}`}>
         <a>
           <div className="w-full h-52 relative">
             <Image
